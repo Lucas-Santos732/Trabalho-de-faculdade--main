@@ -99,3 +99,34 @@ nav a:hover {
         padding: 5px 10px;
     }
 }
+.imagem {
+    max-width: 800px; /* Largura máxima para centralizar a galeria */
+    margin: 20px auto; /* Centraliza a div e adiciona espaçamento superior e inferior */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Faz as imagens quebrarem linha quando necessário */
+    gap: 10px; /* Espaço entre as imagens */
+    justify-content: center; /* Centraliza as imagens dentro da div */
+}
+
+.imagem img {
+    max-width: 100%; /* Assegura que as imagens nunca ultrapassem o tamanho do container */
+    height: auto; /* Mantém a proporção das imagens */
+    flex: 1 1 calc(33% - 20px); /* Ocupa 33% da largura disponível com espaçamento */
+    object-fit: cover; /* Ajusta as imagens para cobrir o espaço sem distorção */
+    border-radius: 5px; /* Bordas arredondadas para as imagens */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .imagem img {
+        flex: 1 1 calc(50% - 10px); /* Em telas menores, ocupa 50% da largura */
+    }
+}
+
+@media (max-width: 480px) {
+    .imagem img {
+        flex: 1 1 100%; /* Em telas bem pequenas, cada imagem ocupa 100% da largura */
+    }
+}
