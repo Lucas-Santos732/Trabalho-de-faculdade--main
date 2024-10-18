@@ -1,0 +1,72 @@
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mw-mmv-image {
+    position: relative;
+}
+
+.mw-mmv-image img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: zoom-in;
+    height: 600px;
+    width: 1325px;
+}
+
+#titulo {
+    position: absolute;
+    z-index: 1;
+    font-family: "Didact Gothic";
+    font-weight: 700;
+    font-size: 60px;
+    font-style: normal;
+    color: yellow;
+    margin-bottom: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#subTitulo {
+    position: absolute;
+    z-index: 1;
+    font-family: "Didact Gothic";
+    font-weight: 400;
+    font-size: 30px;
+    font-style: normal;
+    color: white;
+    top: 55%;
+    left: 44%;
+    
+    text-align: center;
+}
+
+nav {
+    position: absolute;
+    left: 450px; /* Ajuste conforme necessário */
+    z-index: 1;
+    font-size: 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding: 10px; /* Ajuste o padding conforme necessário */
+    
+}
+nav a {
+    color: yellow;
+    text-decoration: none;
+    margin: 0 30px; /* Espaçamento horizontal entre os links */
+    padding: 10px 15px; /* Padding interno nos links */
+    
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efeito hover opcional */
+}
