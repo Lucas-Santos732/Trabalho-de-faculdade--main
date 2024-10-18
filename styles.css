@@ -5,68 +5,97 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Didact Gothic", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .mw-mmv-image {
+    width: 100%; /* Faz a imagem ocupar 100% da largura da tela */
+    height: auto; /* Ajusta a altura automaticamente */
     position: relative;
 }
 
 .mw-mmv-image img {
     display: block;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%; /* A imagem ocupa a largura completa */
+    height: auto; /* Mantém a proporção original da imagem */
     cursor: zoom-in;
-    height: 600px;
-    width: 1325px;
+}
+.texto {
+    max-width: 1000px; /* Define a largura máxima da div */
+    margin: 0 auto;   /* Centraliza horizontalmente */
+    padding: 20px;    /* Adiciona espaço interno (padding) em todos os lados */
+    line-height: 1.6; /* Espaçamento entre as linhas de texto para melhor legibilidade */
 }
 
 #titulo {
     position: absolute;
     z-index: 1;
-    font-family: "Didact Gothic";
     font-weight: 700;
-    font-size: 60px;
-    font-style: normal;
+    font-size: 5vw; /* Unidade relativa à largura da viewport */
     color: yellow;
-    margin-bottom: 10px;
-    top: 50%;
+    top: 40%; /* Ajuste conforme necessário */
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 #subTitulo {
     position: absolute;
     z-index: 1;
-    font-family: "Didact Gothic";
     font-weight: 400;
-    font-size: 30px;
-    font-style: normal;
+    font-size: 3vw; /* Unidade relativa à largura da viewport */
     color: white;
-    top: 55%;
-    left: 44%;
-    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
+/* Menu de navegação que "gruda" no topo */
 nav {
-    position: absolute;
-    left: 450px; /* Ajuste conforme necessário */
+    position: -webkit-sticky; /* Suporte para Safari */
+    position: sticky; /* Fixa no topo quando rolar a página */
+    top: 0; /* Quando chegar ao topo da tela, o nav "gruda" */
     z-index: 1;
-    font-size: 30px;
-    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaçamento entre os links */
+    font-size: 2vw; /* Tamanho relativo ao viewport */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
     color: white;
-    font-size: 20px;
     text-align: center;
-    border-bottom: 1px solid white;
-    padding: 10px; /* Ajuste o padding conforme necessário */
-    
+    padding: 10px;
+    width: 100%; /* O nav ocupa toda a largura da tela */
 }
+
 nav a {
     color: yellow;
     text-decoration: none;
-    margin: 0 30px; /* Espaçamento horizontal entre os links */
-    padding: 10px 15px; /* Padding interno nos links */
-    
+    padding: 10px 15px;
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Efeito hover opcional */
+    background-color: rgba(255, 255, 255, 0.2); /* Efeito hover */
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+    #titulo {
+        font-size: 8vw; /* Ajusta o título em telas menores */
+    }
+    
+    #subTitulo {
+        font-size: 5vw; /* Ajusta o subtítulo em telas menores */
+    }
+
+    nav {
+        font-size: 4vw; /* Ajusta o tamanho do texto de navegação */
+    }
+
+    nav a {
+        padding: 5px 10px;
+    }
 }
